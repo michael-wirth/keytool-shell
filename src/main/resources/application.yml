@@ -1,0 +1,22 @@
+#spring:
+#  profiles: local
+
+keystore:
+  location: file:///Users/txw9q/.config/corapi-idm-client/corapi-etu.p12
+  password: 3bf048dfb132d73aeaddf7a1c1ecc12a
+  key-password: a0a7eed8-bde9-48e2-b90a-244ce021d820
+  type: PKCS12
+  provider-name: SUN
+
+---
+
+spring:
+  profiles: etu
+
+keystore:
+  base64: Y29tLnNlY3Vyb3N5cy5wcmltdXMuamNlLmNyZWRlbnRpYWxzLmhvc3Q9YWl6aGhzbTAxLmNvcnAtYXBpLXFhLWVncmVzcy5zdmMKY29tLnNlY3Vyb3N5cy5wcmltdXMuamNlLmNyZWRlbnRpYWxzLnBvcnQ9MjMwMApjb20uc2VjdXJvc3lzLnByaW11cy5qY2UuY3JlZGVudGlhbHMudXNlcj1QQVJUMDA0Cgpjb20uc2VjdXJvc3lzLnByaW11cy5qY2UuUHJpbXVzSmNlU2VydmljZXMuaGF2ZU1lc3NhZ2VEaWdlc3Q9ZmFsc2UKY29tLnNlY3Vyb3N5cy5wcmltdXMuamNlLlByaW11c0pjZVNlcnZpY2VzLmhhdmVNYWM9ZmFsc2UK
+  password: b4252d42839000bc980ebb75db780c4ba4b6b72df0ad86501dce439a2de99c5a
+  key-password: ${keystore.password}
+  type: Primus
+  provider-class-name: com.securosys.primus.jce.PrimusProvider
+  provider-name: SecurosysPrimusXSeries
